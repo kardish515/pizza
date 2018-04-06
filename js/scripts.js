@@ -23,7 +23,20 @@ Pizza.prototype.finalCost = function(){
 var orderCounter = 1;
 
 $(document).ready(function(){
-  $("#formOne").submit(function(event){
+  $("#pickup").click(function(){
+    $("#formPizza").show();
+    $("#selector").hide();
+  });
+  $("#delivery").click(function(){
+    $("#formDelivery").show();
+    $("#selector").hide();
+  });
+  $("#formDelivery").submit(function(event){
+    event.preventDefault();
+    $("#formPizza").show();
+    $("#formDelivery").hide();
+  });
+  $("#formPizza").submit(function(event){
     event.preventDefault();
     var inputtedSize = $("#size").val();
     var inputtedToppings = [];

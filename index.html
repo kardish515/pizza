@@ -9,8 +9,29 @@
   </head>
   <body>
     <div class="container">
-      <form id="formOne">
-        <h1>Welcome to Nick's Pizza Company</h1>
+      <h1>Welcome to Nick's Pizza Company</h1>
+      <div id="selector">
+        <h2>Will this be for pickup or delivery?</h2>
+        <button id="pickup" type=button class="btn btn-info">Pickup</button>
+        <button id="delivery" type=button class="btn btn-info">Delivery</button>
+      </div>
+      <form id="formDelivery">
+        <h2>Please enter your address</h2>
+        <div class="form-group">
+          <input id="street" type="text" class="form-control" placeholder="Street" required>
+        </div>
+        <div class="form-group">
+          <input id="city" type="text" class="form-control" placeholder="City" required>
+        </div>
+        <div class="form-group">
+          <input id="state" type="text" class="form-control" placeholder="State" required>
+        </div>
+        <div class="form-group">
+          <input id="zipcode" type="text" class="form-control" placeholder="Zipcode" required>
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+      </form>
+      <form id="formPizza">
         <h2>Choose your size</h2>
         <select class="form-control" id="size">
           <option>Small</option>
