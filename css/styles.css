@@ -10,7 +10,33 @@
 .pizza:hover{
   text-decoration: underline;
 }
+
 img{
   height: 100px;
   width: 100px;
+}
+
+body {
+  position: relative;
+  color: #1420a8;
+}
+
+body::after {
+  content: "";
+  background: url(../img/pizza.jpg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+li{
+  font-size: 20px;
+}
+
+p{
+  font-size: 20px;
 }

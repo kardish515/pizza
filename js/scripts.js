@@ -32,6 +32,9 @@ $(document).ready(function(){
     });
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
     newPizza.getSizeCost();
+    if(newPizza.toppings.length === 0){
+      newPizza.toppings.push("None");
+    }
     // $("#output").text("Your pizza is $" + newPizza.finalCost());
     $("ul#pizzas").append("<li><span class='pizza'>order " + orderCounter + "</span></li>");
     $(".pizza").last().click(function(){
