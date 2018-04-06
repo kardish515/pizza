@@ -10,3 +10,7 @@
 .pizza:hover{
   text-decoration: underline;
 }
+img{
+  height: 100px;
+  width: 100px;
+}

@@ -26,7 +26,6 @@ $(document).ready(function(){
   $("#formOne").submit(function(event){
     event.preventDefault();
     var inputtedSize = $("#size").val();
-    console.log(inputtedSize);
     var inputtedToppings = [];
     $("input:checkbox[name=toppings]:checked").each(function(){
       inputtedToppings.push($(this).val());
@@ -34,7 +33,7 @@ $(document).ready(function(){
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
     newPizza.getSizeCost();
     // $("#output").text("Your pizza is $" + newPizza.finalCost());
-    $("ul#pizzas").append("<li><span class='pizza'>order" + orderCounter + "</span></li>");
+    $("ul#pizzas").append("<li><span class='pizza'>order " + orderCounter + "</span></li>");
     $(".pizza").last().click(function(){
       $("#show-pizza").show();
       $(".size").text(newPizza.size);
