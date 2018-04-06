@@ -9,7 +9,9 @@
   </head>
   <body>
     <div class="container">
-      <h1>Welcome to Nick's Pizza Company</h1>
+      <div class="jumbotron">
+        <h1>Welcome to Nick's Pizza Company</h1>
+      </div>
       <div id="selector">
         <h2>Will this be for pickup or delivery?</h2>
         <button id="pickup" type=button class="btn btn-info">Pickup</button>
@@ -54,10 +56,11 @@
 
         </ul>
       </div>
-      <div id="show-pizza">
+      <div class="jumbotron" id="show-pizza">
         <p>Size: <span class="size"></span></p>
         <p>Toppings: <span class="toppings"></span></p>
         <p>Total cost: $<span class="total-cost"></span></p>
+        <p><span class="addressLine"></span></p>
         <p><span class="addressLine1"></span></p>
         <p><span class="addressLine2"></span></p>
       </div>

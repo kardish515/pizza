@@ -47,6 +47,7 @@ $(document).ready(function(){
     var inputtedZipcode = $("#zipcode").val();
     var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState, inputtedZipcode);
     deliveryCharge = 3;
+    $(".addressLine").text("Delivery Address:");
     $(".addressLine1").text(newAddress.street);
     $(".addressLine2").text(newAddress.city + ", " + newAddress.state + ", " + newAddress.zipcode);
     $("#formPizza").show();
@@ -61,7 +62,6 @@ $(document).ready(function(){
     });
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
     newPizza.getSizeCost();
-    // $("#output").text("Your pizza is $" + newPizza.finalCost());
     $("ul#pizzas").append("<li><span class='pizza'>order " + orderCounter + "</span></li>");
     $(".pizza").last().click(function(){
       $("#show-pizza").show();

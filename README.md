@@ -25,6 +25,10 @@ Display the cost of the pizza | small, pepperoni | $10
 * CSS _(Bootstrap 4)_
 * JavaScript _(jQuery 3.3.1)_
 
+## Link
+
+[a link to Pizza](https://kardish515.github.io/pizza)
+
 ## License
 
 MIT License
