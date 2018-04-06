@@ -4,6 +4,13 @@ function Pizza(size, toppings){
   this.toppings = toppings;
 }
 
+function Address(street, city, state, zipcode){
+  this.street = street;
+  this.city = city;
+  this.state = state;
+  this.zipcode = zipcode;
+}
+
 Pizza.prototype.getSizeCost = function(){
   if(this.size === "Small"){
       this.sizeCost = 8;
@@ -21,6 +28,7 @@ Pizza.prototype.finalCost = function(){
 }
 
 var orderCounter = 1;
+var deliveryCharge = 0;
 
 $(document).ready(function(){
   $("#pickup").click(function(){
@@ -33,6 +41,14 @@ $(document).ready(function(){
   });
   $("#formDelivery").submit(function(event){
     event.preventDefault();
+    var inputtedStreet = $("#street").val();
+    var inputtedCity = $("#city").val();
+    var inputtedState = $("#state").val();
+    var inputtedZipcode = $("#zipcode").val();
+    var newAddress = new Address(inputtedStreet, inputtedCity, inputtedState, inputtedZipcode);
+    deliveryCharge = 3;
+    $(".addressLine1").text(newAddress.street);
+    $(".addressLine2").text(newAddress.city + ", " + newAddress.state + ", " + newAddress.zipcode);
     $("#formPizza").show();
     $("#formDelivery").hide();
   });
@@ -45,16 +61,16 @@ $(document).ready(function(){
     });
     var newPizza = new Pizza(inputtedSize, inputtedToppings);
     newPizza.getSizeCost();
-    if(newPizza.toppings.length === 0){
-      newPizza.toppings.push("None");
-    }
     // $("#output").text("Your pizza is $" + newPizza.finalCost());
     $("ul#pizzas").append("<li><span class='pizza'>order " + orderCounter + "</span></li>");
     $(".pizza").last().click(function(){
       $("#show-pizza").show();
       $(".size").text(newPizza.size);
+      $(".total-cost").text(newPizza.finalCost() + deliveryCharge);
+      if(newPizza.toppings.length === 0){
+        newPizza.toppings.push("None");
+      }
       $(".toppings").text(newPizza.toppings.join(", "));
-      $(".total-cost").text(newPizza.finalCost());
     });
     orderCounter++;
   });
