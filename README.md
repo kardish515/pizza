@@ -10,9 +10,12 @@ A program where a user can choose their toppings and size to order a pizza
 
 Behavior | Input | Ouput
 ------------ | ------------- | -------------
-Choose the size of the pizza| small | small
-Choose the toppings of the pizza | pepperoni, sausage | pepperoni, sausage
-Display the cost of the pizza | small, pepperoni | $10
+Calculate the price of a small pizza | "small" | 8
+Calculate the price of a medium pizza | "medium" | 10
+Calculate the price of a large pizza | "large" | 12
+Calculate the price of an extra large pizza | "extra large" | 14
+Calculate the price of a pizza with 1 topping | "small, pepperoni" | 9
+Calculate the price of a pizza with multiple toppings | "small, pepperoni, sausage" | 10
 
 ## Setup/Installation Requirements
 
